@@ -8,7 +8,7 @@
   </head>
   <body>
     <div ng-controller="TodoCtrl">
-      <h3>Total todos: {{totalTodos()}}</h3>
+      <h3>Total todos: {{totalTodos()}} ({{numCompletedTodos()}} completed)</h3>
       <ul>
         <li ng-repeat="todo in todos">
           <input type="checkbox" ng-model="todo.done">

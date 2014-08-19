@@ -22,4 +22,8 @@ function TodoCtrl($scope) {
   $scope.clearCompleted= function() {
     $scope.todos = todosNotDone();
   }
+
+  $scope.numCompletedTodos = function() {
+    return $scope.todos.length - todosNotDone().length;
+  }
 }
