@@ -12,4 +12,14 @@ function TodoCtrl($scope) {
     $scope.todos.push({text: $scope.newTodoText, done:false});
     $scope.newTodoText = "";
   }
+
+  var todosNotDone = function () {
+    return _.filter($scope.todos, function(todo) {
+      return !todo.done;
+    });
+  }
+
+  $scope.clearCompleted= function() {
+    $scope.todos = todosNotDone();
+  }
 }
