@@ -7,4 +7,9 @@ function TodoCtrl($scope) {
   $scope.totalTodos = function() {
     return $scope.todos.length;
   };
+
+  $scope.addTodo = function() {
+    $scope.todos.push({text: $scope.newTodoText, done:false});
+    $scope.newTodoText = "";
+  }
 }

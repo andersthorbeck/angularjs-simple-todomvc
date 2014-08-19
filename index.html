@@ -13,6 +13,11 @@
           <input type="checkbox" ng-model="todo.done">
           <span class="done-{{todo.done}}">{{todo.text}}</span>
         </li>
+        <li>
+          <form ng-submit="addTodo()">
+            <input type="text" ng-model="newTodoText">
+          </form>
+        </li>
       </ul>
     </div>
   </body>
