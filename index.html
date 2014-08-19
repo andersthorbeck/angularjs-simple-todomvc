@@ -3,6 +3,7 @@
   <head>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
     <script type="text/javascript" src="todo.js"></script>
+    <link rel="stylesheet" type="text/css" href="todo.css">
   </head>
   <body>
     <div ng-controller="TodoCtrl">
@@ -10,7 +11,7 @@
       <ul>
         <li ng-repeat="todo in todos">
           <input type="checkbox" ng-model="todo.done">
-          {{todo.text}}
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
         </li>
       </ul>
     </div>
