@@ -7,6 +7,11 @@
   <body>
     <div ng-controller="TodoCtrl">
       <h3>Total todos: {{totalTodos()}}</h3>
+      <ul>
+        <li ng-repeat="todo in todos">
+          {{todo.text}}
+        </li>
+      </ul>
     </div>
   </body>
 </html>
