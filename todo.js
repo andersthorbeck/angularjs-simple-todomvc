@@ -1,4 +1,12 @@
+(function() {
+  var appDependencies = [];
+  var app = angular.module('todoapp', appDependencies);
+
+  app.controller("TodoCtrl", TodoCtrl);
+})();
+
 function TodoCtrl($scope) {
+
   $scope.todos = [
     {text:"Learn AngularJs", done:false},
     {text:"Complete Todo-App", done:false}
