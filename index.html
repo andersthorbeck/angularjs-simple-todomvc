@@ -10,10 +10,7 @@
     <div ng-controller="TodoCtrl">
       <h3>Total todos: {{totalTodos()}} ({{numCompletedTodos()}} completed)</h3>
       <ul>
-        <li ng-repeat="todo in todos">
-          <input type="checkbox" ng-model="todo.done">
-          <span class="done-{{todo.done}}">{{todo.text}}</span>
-        </li>
+        <todo-li ng-repeat="todo in todos"></todo-li>
         <li>
           <form ng-submit="addTodo()">
             <input type="text" ng-model="newTodoText">
@@ -22,5 +19,11 @@
       </ul>
       <button ng-click="clearCompleted()">Clear completed Todos</button>
     </div>
+    <script type="text/ng-template" id="todo-li.html">
+      <li>
+        <input type="checkbox" ng-model="todo.done">
+        <span class="done-{{todo.done}}">{{todo.text}}</span>
+      </li>
+    </script>
   </body>
 </html>

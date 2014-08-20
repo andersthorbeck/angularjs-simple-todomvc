@@ -3,6 +3,14 @@
   var app = angular.module('todoapp', appDependencies);
 
   app.controller("TodoCtrl", TodoCtrl);
+
+  app.directive("todoLi", function() {
+    return {
+      restrict: 'E',  // E for element (tag), A for attribute
+      templateUrl: 'todo-li.html'
+    };
+  });
+
 })();
 
 function TodoCtrl($scope) {
