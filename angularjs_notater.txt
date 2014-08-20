@@ -1,0 +1,66 @@
+AngularJS
+
+Extensible HTML
+* Directives: HTML annotations that trigger Javascript behaviors (special HTML attributes, telling Angular to run some JavaScript code)
+* Modules: Where our application components live (can use other modules)
+* Controllers: Where we add application behavior (Define app's behaviour through functions and values)
+* Expressions: How values get displayed within the page (Lets you insert dynamic values into HTML (ex. {{2 + 3}}))
+* two-way data binding: Expressions define a 2-way Data Binding ... this means Expressions are re-evaluated when a property changes.
+  - "Any changes to the view are immediately reflected in the model, and any changes in the model are propagated to the view."
+  - As opposed to traditional one-way data binding, which generates a view from a model, but does not automatically update the model from the view.
+
+
+Funksjoner på en module variabel:
+* controller(controllerName, controller behaviour function)
+* directive(directiveName, function returning directive config object)
+
+
+Directive eksempler:
+* <html ng-app="store">: attach the Application Module to the page
+* <body ng-controller="StoreController as store">: attach a Controller function to the page
+* <button ng-show="store.product.canPurchase"> Add to Cart </button>: display a section based on an Expression
+* <div ng-hide="store.product.soldOut"> ... </div>: display a section based on an Expression
+* <li ng-repeat="product in store.products"> {{product.name}} </li>: repeat a section for each item in an Array
+* <img ng-src="{{product.images[0].full}}"/>: avoid browser trying to load the image _before_ the Expression evaluates.
+* <a href ng-click="tab = 2"> Description </a>: Evaluates expression/statement when clicked.
+* <section ng-init="tab = 1">: allows us to evaluate an expression in the current scope.
+* <li ng-class="{ active:tab === 3 }"> ... </li>: Expression to evaluate. If true, set class to “active”, otherwise nothing.
+* <textarea ng-model="review.body"></textarea>: binds the form element value to the property
+* <select ng-options="stars for stars in [5,4,3,2,1]"> ... </select>
+* <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)"> ... </form>
+* <div ng-include="'product-description.html'">: include the template from the provided html page.
+
+
+
+More advanced:
+* Filter: {{ data | filter:options }}
+
+
+Filter examples: 
+* currency (localized): {{product.price | currency}}
+* date: {{'1388123412323' | date:'MM/dd/yyyy @ h:mma'}} = 12/27/2013 @ 12:50AM
+* uppercase/lowercase: {{'octagon gem' | uppercase}} = OCTAGON GEM
+* limitTo: {{'My Description' | limitTo:8}} = My Descr
+* orderBy: <li ng-repeat="product in store.products | orderBy:'-price'">
+
+
+Built-in angular classes:
+* ng-pristine: has not been touched
+* ng-dirty: has been altered
+* ng-invalid: is invalid
+* ng-valid: is valid
+
+Other stuff:
+  angularjs form validation
+  custom directives (element or attribute)
+  module avhengigheter
+  service avhengigheter
+
+
+Resources:
+* https://projects.knowit.no/display/FAG/7+Webrammeverk
+* https://angularjs.org/
+* http://campus.codeschool.com/courses/shaping-up-with-angular-js/
+* https://www.youtube.com/watch?v=WuiHuZq_cg4
+* http://todomvc.com/architecture-examples/angularjs/#/
+* file:///home/andtho/code/fag/faggrupper/webrammeverk/angularjs/angularjs-simple-todomvc/index.html
